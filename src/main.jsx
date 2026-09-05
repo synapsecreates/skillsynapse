@@ -6,7 +6,9 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* BASE_URL is '/' locally and '/skillsynapse/' in the production build,
+        so routing works both in dev and under the GitHub Pages subpath. */}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>,
